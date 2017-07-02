@@ -6,12 +6,12 @@
 WiFiClient wifiClient;
 
 //config
-#define SSID "SSID name"
-#define PASSWD "PASSWORD"
-#define TCP_IP "IP"
-#define TCP_PORT PORT 
+#define SSID "scream"
+#define PASSWD "s741852scream"
+#define TCP_IP "192.168.1.205"
+#define TCP_PORT 8888
 
-#define deviceID 2
+#define deviceID 22
 
 //pin config
 int in_msg = D0;
@@ -19,7 +19,7 @@ int out_msg = D2;
 int wifi_connect = D5;
 
 
-char _buffer[3];
+char _buffer[4];
 
 //Initial
 void setup() {
@@ -55,10 +55,10 @@ void setup() {
    _buffer[0] = 'C';
 
    //first char is character, second and third are ID
-   String(deviceID, HEX).toCharArray((_buffer + 1), 2);
+   String(deviceID, HEX).toCharArray((_buffer + 1), 4);
     
    //send to server
-   wifiClient.write(&_buffer[0], 2);
+   wifiClient.write(&_buffer[0], 4);
 
    //clear buffer
    for (int i = 1; i < sizeof(_buffer); i ++) {
@@ -83,11 +83,11 @@ void loop() {
     if(first != second){
       
       //first char is ID
-      String(deviceID, HEX).toCharArray(_buffer, 2);
+      String(deviceID, HEX).toCharArray(_buffer, 4);
 
       //event trigger
-      _buffer[1] = '1';
-      wifiClient.write(&_buffer[0], 2);
+      _buffer[2] = '1';
+      wifiClient.write(&_buffer[0], 4);
 
       //clear buffer
       for(int i = 1; i < sizeof(_buffer); i++){
