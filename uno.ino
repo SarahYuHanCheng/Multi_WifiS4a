@@ -55,7 +55,7 @@ void recvWifi(){
     for(int i = 0; i < char_count; i++){
       output[i] = wifiToServer.read();
       
-      if(i == 0) {
+      if(i == 1) {
 
         //String to HEX
         msg_ID = strtoul(output, NULL , 16);
