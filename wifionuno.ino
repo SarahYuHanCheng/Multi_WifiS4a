@@ -4,10 +4,10 @@
 WiFiClient wifiClient;
 
 //config
-#define SSID "SSID name"
-#define PASSWD "PASSWORD"
-#define TCP_IP "IP"
-#define TCP_PORT PORT
+#define SSID "scream"
+#define PASSWD "s741852scream"
+#define TCP_IP "192.168.1.8"
+#define TCP_PORT 8888
 
 #define deviceID 1
 
@@ -39,7 +39,7 @@ void setup() {
   //send to server
   _buffer[0] = 'X'; 
   String(deviceID, HEX).toCharArray((_buffer + 1), 2);
-  wifiClient.write((&_buffer[0]), 2);
+  wifiClient.write((const uint8_t *)_buffer, 2);
 
   // clear buffer
   for (int i = 1; i < sizeof(_buffer); i++) {
@@ -82,7 +82,7 @@ void loop() {
    
     currentTimer = millis();
     wifiClient.read((unsigned char *)buffer, 32);
-
+    Serial.println(buffer);
     //clear buffer
     for (int i = 1; i < sizeof(buffer); i++) {
       buffer[i] = {0}; 
