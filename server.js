@@ -42,7 +42,7 @@ net.createServer(function (socket){
 
 		} else {
 			//action data
-			console.log('action: '+ WifiOnUno.remoteAddress + ":"+ WifiOnUno.remotePort);
+// 			console.log('action: '+ WifiOnUno.remoteAddress + ":"+ WifiOnUno.remotePort);
 			if(WifiOnUno){
 				console.log('send data to WifiOnUno: '+ data);
 				WifiOnUno.write(data);
