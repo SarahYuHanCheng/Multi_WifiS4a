@@ -8,7 +8,7 @@ WiFiClient wifiClient;
 //config
 #define SSID "scream"
 #define PASSWD "s741852scream"
-#define TCP_IP "192.168.1.205"
+#define TCP_IP "192.168.1.8"
 #define TCP_PORT 8888
 
 #define deviceID 22
@@ -58,7 +58,7 @@ void setup() {
    String(deviceID, HEX).toCharArray((_buffer + 1), 4);
     
    //send to server
-   wifiClient.write(&_buffer[0], 4);
+   wifiClient.write((const uint8_t *)_buffer, 4);
 
    //clear buffer
    for (int i = 1; i < sizeof(_buffer); i ++) {
@@ -87,7 +87,7 @@ void loop() {
 
       //event trigger
       _buffer[2] = '1';
-      wifiClient.write(&_buffer[0], 4);
+      wifiClient.write((const uint8_t *)_buffer, 4);
 
       //clear buffer
       for(int i = 1; i < sizeof(_buffer); i++){
