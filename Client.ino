@@ -6,9 +6,9 @@
 WiFiClient wifiClient;
 
 //config
-#define SSID "scream"
-#define PASSWD "s741852scream"
-#define TCP_IP "192.168.1.8"
+#define SSID "server連到的網路名稱"
+#define PASSWD "網路密碼"
+#define TCP_IP "192.168.1.0" //server被分配到的IP
 #define TCP_PORT 8888
 
 #define deviceID 22
@@ -32,7 +32,8 @@ void setup() {
    while (!Serial)
     ;
 
-   Serial.println("Connecting...");
+   Serial.print("Connecting...SSID:");
+   Serial.println(SSID);
    
    // check for the presence of the shield
    if ( WiFi.status() == WL_NO_SHIELD) {
