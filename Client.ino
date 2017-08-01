@@ -31,27 +31,26 @@ void setup() {
    Serial.begin(9600);
    while (!Serial)
     ;
-
-   Serial.print("Connecting...SSID:");
-   Serial.println(SSID);
+   // Wait for connection
+   while ( WiFi.waitForConnectResult() != WL_CONNECTED) {
+    WiFi.begin(SSID, PASSWD);
+    Serial.print("Retry Connecting...SSID:");
+    Serial.println(SSID);
+    delay(100);
+   } Serial.println("Conneted to AP");
    
    // check for the presence of the shield
    if ( WiFi.status() == WL_NO_SHIELD) {
     Serial.println("WiFi shield not present");
-
     while(true);
    }
-
-   // Wait for connection
-   while ( WiFi.waitForConnectResult() != WL_CONNECTED) {
-    WiFi.begin(SSID, PASSWD);
-    Serial.println("Retry");
-    delay(100);
-   }
    
-   Serial.println("Conneted");
-   wifiClient.connect(TCP_IP,TCP_PORT);
-
+   while(!wifiClient.connect(TCP_IP,TCP_PORT)){
+      Serial.print("Retry Connecting...Server port:");
+      Serial.println(TCP_PORT);
+    };
+    Serial.println("Conneted to Server");
+   
    //set client ID
    _buffer[0] = 'C';
 
