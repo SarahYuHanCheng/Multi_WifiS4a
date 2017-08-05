@@ -1,9 +1,9 @@
-This is a project rewrite in nodejs. Source is from https://github.com/SarahYuHanCheng/scratch_project
+This is a project rewrite in nodejs. Source is from  https://github.com/function86437/scratch_project_nodejs
 
 # Installation
+* [下載截圖說明](https://hackmd.io/s/B1bSCBzUb)
+* [安裝操作教學](https://hackmd.io/s/SyjIY4ZVZ)
 * [Multi-WiFiS4A使用說明](goo.gl/t2iEq3)
-* [安裝教學](https://hackmd.io/s/SyjIY4ZVZ)
-* [安裝截圖說明](https://hackmd.io/s/B1bSCBzUb)
 ## tools
 ### software
 <ul>
