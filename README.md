@@ -3,7 +3,12 @@ This is a project rewrite in nodejs. Source is from  https://github.com/function
 # Installation
 * [下載截圖說明](https://hackmd.io/s/B1bSCBzUb)
 * [安裝操作教學](https://hackmd.io/s/SyjIY4ZVZ)
-* [Multi-WiFiS4A使用說明](goo.gl/t2iEq3)
+* [Multi-WiFiS4A使用說明](https://hackmd.io/s/HJhGPQb_Z)
+
+## Architecture
+![](https://i.imgur.com/WfYGQZd.png)
+
+* [Multi-WiFiS4A使用說明](https://hackmd.io/s/HJhGPQb_Z)
 ## tools
 ### software
 <ul>
