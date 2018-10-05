@@ -7,8 +7,6 @@ This is a project rewrite in nodejs. Source is from  https://github.com/function
 
 ## Architecture
 ![](https://i.imgur.com/WfYGQZd.png)
-
-* [Multi-WiFiS4A使用說明](https://hackmd.io/s/HJhGPQb_Z)
 ## tools
 ### software
 <ul>
