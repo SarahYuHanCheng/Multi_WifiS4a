@@ -39,7 +39,7 @@ void setup()
   wifitoserver.begin(9600);
   wifitoserver.flush();
   delay(10);
-  configurePins();
+  reset();
 }
 
 void loop()
